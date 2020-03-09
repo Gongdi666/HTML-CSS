@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="/CSS/Japan.css" th:href="@{/CSS/Japan.css}" rel="stylesheet"></link>
+
+
+
+</head>
+<body>
+<!-- 大画面 -->
+<div class="daigamen">
+
+<!-- 画面1 -->
+	<div class ="gamen1">
+		<div class ="gray">【商品管理】商品情報一覧 </div>
+		<div class ="shori_radio">
+				<div class ="syori_main">処理モード</div>
+				<input type="radio" name="q1" value="検索修正" class ="kensaku"> 検索/修正
+				<input type="radio" name="q1" value="新規登録" class ="shinki"> 新規登録
+		</div>
+		<div class ="blue"> 検索条件 </div>
+		<div class ="kankaku">
+			<span> 商品コード </span> <input type ="text" maxlength ="6">
+		<input type ="button" value ="検索" class ="kensaku_button"> 
+		</div>
+		<div class ="kankaku">
+			<span> 商品名 </span> <input type ="text" maxlength ="51">
+		</div>
+		<div class ="kankaku">
+			<span> 製造メーカー </span> <input> <input type="submit" value="▼">
+		</div>
+	</div>
+<!-- 画面1終了 -->
+
+<!-- 画面2 -->
+	<div class ="gamen2">
+		<div class ="blue">新規登録</div>
+		<div class ="shohin_main">
+			<div class ="syohin"> <span> 商品コード </span> <input type ="text"> </div>
+			<div class ="blue2"> <input type ="submit" value ="新規登録"> </div>
+			<div class ="blue3"> <input type ="submit" value ="中断" class ="tyu_dan"> </div>
+			<div class ="blue_influ"> </div>
+		</div>
+
+		<div class ="kankaku"> <span> 商品名 </span> <input type ="text">	</div>
+		<div class ="kankaku"> <span> 単価 </span> <input type ="text" maxlength ="11"> </div>
+		<div class ="kankaku"> <span> 製造メーカー </span> <input> <input type="submit" value="▼"> </div>
+	</div>
+<!-- 画面2終了 -->
+
+
+<!-- 画面3 -->
+	<div class="gamen3">
+		<div class="blue">検索結果</div>
+
+		<div class="botan1">
+			<input type="button" value="更新" class="button1">
+			<input type="submit" value="削除" class="button2">
+			<input type="submit" value="中断" class="button3">
+		</div>
+
+		<table border ="1">
+			<tr class ="Hyo_color">
+				<th>NO</th>
+				<th>対象</th>
+				<th>商品コード</th>
+				<th>商品名</th>
+				<th>単価</th>
+				<th>製造メーカー</th>
+			</tr>
+
+			<tr>
+				<th>1</th>
+				<th>□</th>
+				<th class ="Hyo_code"><input maxlength="6"></th>
+				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
+				<th><input class ="tanka"></th>
+				<th>xxxxxxxxxxx</th>
+			</tr>
+  
+
+			<tr>
+				<th>2</th>
+				<th>□</th>
+				<th class ="Hyo_code"><input maxlength="6"></th>
+				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
+				<th><input class ="tanka"></th>
+				<th>xxxxxxxxxxx<input type="submit" value="▼"></th>
+			</tr>
+
+			<tr>
+				<th>3</th>
+				<th>□</th>
+				<th class ="Hyo_code"><input maxlength="6"></th>
+				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
+				<th><input class ="tanka"></th>
+				<th>xxxxxxxxxxx<input type="submit" value="▼"></th>
+			</tr>
+
+			<tr>
+				<th>4</th>
+				<th>□</th>
+				<th class ="Hyo_code"><input maxlength="6"></th>
+				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
+				<th><input class ="tanka"></th>
+				<th>xxxxxxxxxxx<input type="submit" value="▼"></th>
+			</tr>
+
+			<tr>
+				<th>5</th>
+				<th>□</th>
+				<th class ="Hyo_code"><input maxlength="6"></th>
+				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
+				<th><input class ="tanka"></th>
+				<th>single select (fselect)<td th:text="*{fselect}"></td></th>
+			</tr>
+		</table>
+	</div>
+<!-- 画面3終了 -->
+<!-- 大画面終了 -->
+</div>
+
+<!-- jquery セレクター検索 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/CSS/JavaScript.js" th:src="@{/CSS/JavaScript.js}"></script>
+
+</body>
+</html>
