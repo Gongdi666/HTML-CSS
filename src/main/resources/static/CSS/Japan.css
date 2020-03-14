@@ -3,11 +3,12 @@
 /*画面1*/
 .gray {
 	font-size: 11;
-	padding: 0 .5em;
-	left: 20px;
-	top: 10px;
-	font-weight: bold;
+	padding: 1.0em;
+	margin:10px 20px;
 	background-color: #a9a9a9;
+}
+.shori_radio{
+	margin:10px 20px;
 }
 
 span {
@@ -33,6 +34,7 @@ span {
 }
 .kensaku_button{
 	float:right;
+	width:100px;
 }
 
 /*画面2*/
@@ -46,10 +48,18 @@ span {
 	float: right;
 	margin-right:20px;
 }
-
+.shinki_button{
+	width:100px;
+}
+.shohin_code{
+	width:120px;
+}
 .blue3 {
 	float: right;
 	margin-right:20px;
+}
+.tyu_dan{
+	width:100px;
 }
 
 .blue_influ {
@@ -75,10 +85,53 @@ table {
 	border-collapse: collapse;
 	margin :10px 20px;
 }
-
+.NO{
+	width:40px;
+}
+.Taisyo{
+	width:40px;
+}
 .Hyo_color {
 	background-color: #ffe4c4;
 }
-input.name_size{
-	width:400px;
+.Hyo_code{
+	width:120px;
+}
+
+.Hyo_name{
+	width:300px;
+}
+.name_size1{
+	width:300px;
+}
+.name_size2{
+	width:300px;
+}
+.name_size3{
+	width:300px;
+}
+.name_size4{
+	width:300px;
+}
+.name_size5{
+	width:300px;
+}
+
+.tanka{
+	width:120px;
+}
+#singleSelect1{
+	width:310px;
+}
+#singleSelect2{
+	width:310px;
+}
+#singleSelect3{
+	width:310px;
+}
+#singleSelect4{
+	width:310px;
+}
+#singleSelect5{
+	width:310px;
 }

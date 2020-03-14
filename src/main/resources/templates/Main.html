@@ -10,123 +10,175 @@
 
 </head>
 <body>
-<!-- 大画面 -->
-<div class="daigamen">
+	<!-- 大画面 -->
+	<div class="daigamen">
 
-<!-- 画面1 -->
-	<div class ="gamen1">
-		<div class ="gray">【商品管理】商品情報一覧 </div>
-		<div class ="shori_radio">
-				<div class ="syori_main">処理モード</div>
-				<input type="radio" name="q1" value="検索修正" class ="kensaku"> 検索/修正
-				<input type="radio" name="q1" value="新規登録" class ="shinki"> 新規登録
+		<!-- 画面1 -->
+		<div class="gamen1">
+			<div class="gray">【商品管理】商品情報一覧</div>
+			<div class="shori_radio">
+				<div class="syori_main">処理モード</div>
+				<input type="radio" name="q1" value="検索修正" class="kensaku">
+				検索/修正 <input type="radio" name="q1" value="新規登録" class="shinki">
+				新規登録
+			</div>
+			<div class ="gamen1_2">
+			<div class="blue">検索条件</div>
+			<div class="kankaku">
+				<span> 商品コード </span> <input type="text" maxlength="6" class ="shohin_code"> <input
+					type="button" value="検索" class="kensaku_button">
+			</div>
+			<div class="kankaku">
+				<span> 商品名 </span> <input type="text" maxlength="51" class="name_size">
+			</div>
+			<div class="kankaku">
+				<span> 製造メーカー</span> <select id="singleSelect" name="selectedItem">
+					<option value="">---</option>
+					<option th:each="item : ${selectItems}" th:value="${item.value}"
+						th:text="${item.value}"
+						th:selected="${item.value} == *{selectedItem}">singleSelect</option>
+				</select>
+			</div>
+			</div>
 		</div>
-		<div class ="blue"> 検索条件 </div>
-		<div class ="kankaku">
-			<span> 商品コード </span> <input type ="text" maxlength ="6">
-		<input type ="button" value ="検索" class ="kensaku_button"> 
+		<!-- 画面1終了 -->
+
+		<!-- 画面2 -->
+		<div class="gamen2">
+			<div class="blue">新規登録</div>
+			<!--  <form action="main" method="post" name="sample-form" id="sample-form"> -->
+			<div class="shohin_main">
+				<div class="syohin">
+					<span> 商品コード </span> <input type="text" class="syohin_code">
+				</div>
+				<div class="blue2">
+					<input type="submit" value="新規登録" class="shinki_button">
+				</div>
+				<div class="blue3">
+					<input type="submit" value="中断" class="tyu_dan">
+				</div>
+				<div class="blue_influ"></div>
+			</div>
+
+			<div class="kankaku">
+				<span> 商品名 </span> <input type="text" class ="name_size">
+			</div>
+			<div class="kankaku">
+				<span> 単価 </span> <input type="text" maxlength="11">
+			</div>
+			<div class="kankaku">
+				<span> 製造メーカー </span> <select id="singleSelect" name="selectedItem">
+					<option value="">---</option>
+					<option th:each="item : ${selectItems}" th:value="${item.value}"
+						th:text="${item.value}"
+						th:selected="${item.value} == *{selectedItem}">singleSelect</option>
+				</select>
+			</div>
+			<!--  </form> -->
 		</div>
-		<div class ="kankaku">
-			<span> 商品名 </span> <input type ="text" maxlength ="51">
-		</div>
-		<div class ="kankaku">
-			<span> 製造メーカー </span> <input> <input type="submit" value="▼">
-		</div>
+		<!-- 画面2終了 -->
+
+
+		<!-- 画面3 -->
+		<div class="gamen3">
+			<div class="blue">検索結果</div>
+
+			<div class="botan1">
+				<input type="button" value="更新" class="button1"> <input
+					type="submit" value="削除" class="button2"> <input
+					type="submit" value="中断" class="button3">
+			</div>
+
+			<table border="1">
+				<tr class="Hyo_color">
+					<th>NO</th>
+					<th>対象</th>
+					<th>商品コード</th>
+					<th>商品名</th>
+					<th>単価</th>
+					<th>製造メーカー</th>
+				</tr>
+
+				<tr>
+					<th class="NO">1</th>
+					<th class ="Taisyo"><input type="checkbox" class ="checbox1"></th>
+					<th class="Hyo_code"><input maxlength="6" value ="" class="code_shohin1"></th>
+					<th class="Hyo_name"><input maxlength="50" value =""class="name_size1"></th>
+					<th class="tanka"><input class ="tanka_name1"></th>
+					<th><select id="singleSelect1" name="selectedItem">
+							<option value="">---</option>
+							<option th:each="item : ${selectItems}" th:value="${item.value}"
+								th:text="${item.value}"
+								th:selected="${item.value} == *{selectedItem}">singleSelect</option>
+					</select></th>
+				</tr>
+
+
+				<tr>
+					<th class ="NO">2</th>
+					<th class ="Taisyo"><input type="checkbox" class ="checbox2"></th>
+					<th class="Hyo_code"><input maxlength="6" value ="" class ="code_shohin2"></th>
+					<th class="Hyo_name"><input maxlength="50" value ="" class="name_size2"></th>
+					<th class="tanka"><input value ="" class ="tanka_name2"></th>
+					<th><select id="singleSelect2" name="selectedItem">
+							<option value="">---</option>
+							<option th:each="item : ${selectItems}" th:value="${item.value}"
+								th:text="${item.value}"
+								th:selected="${item.value} == *{selectedItem}">singleSelect</option>
+					</select></th>
+				</tr>
+
+				<tr>
+					<th class ="NO">3</th>
+					<th class ="Taisyo"><input type="checkbox" class ="checbox3"></th>
+					<th class="Hyo_code"><input maxlength="6" value ="" class ="code_shohin3"></th>
+					<th class="Hyo_name"><input maxlength="50" value =""class="name_size3"></th>
+					<th class="tanka"><input value ="" class ="tanka_name3"></th>
+					<th><select id="singleSelect3" name="selectedItem">
+							<option value="">---</option>
+							<option th:each="item : ${selectItems}" th:value="${item.value}"
+								th:text="${item.value}"
+								th:selected="${item.value} == *{selectedItem}">singleSelect</option>
+					</select></th>
+				</tr>
+
+				<tr>
+					<th class ="NO">4</th>
+					<th class ="Taisyo"><input type="checkbox" class ="checbox4"></th>
+					<th class="Hyo_code"><input maxlength="6" value ="" class ="code_shohin4"></th>
+					<th class="Hyo_name"><input maxlength="50" value =""class="name_size4"></th>
+					<th class="tanka"><input value ="" class ="tanka_name4"></th>
+					<th><select id="singleSelect4" name="selectedItem">
+							<option value="">---</option>
+							<option th:each="item : ${selectItems}" th:value="${item.value}"
+								th:text="${item.value}"
+								th:selected="${item.value} == *{selectedItem}">singleSelect</option>
+					</select></th>
+				</tr>
+
+				<tr>
+					<th class ="NO">5</th>
+					<th class="Taisyo"><input type="checkbox" class ="checbox5"></th>
+					<th class="Hyo_code"><input maxlength="6" value ="" class ="code_shohin5"></th>
+					<th class="Hyo_name"><input maxlength="50" value ="" class="name_size5"></th>
+					<th class="tanka"><input value ="" class="tanka_name5"></th>
+					<th><select id="singleSelect5" name="selectedItem">
+							<option value="">---</option>
+							<option th:each="item : ${selectItems}" th:value="${item.value}"
+								th:text="${item.value}"
+								th:selected="${item.value} == *{selectedItem}">singleSelect</option>
+					</select></th>
+				</tr>
+			</table>
+		<!-- 画面3終了 -->
+		<!-- 大画面終了 -->
 	</div>
-<!-- 画面1終了 -->
-
-<!-- 画面2 -->
-	<div class ="gamen2">
-		<div class ="blue">新規登録</div>
-		<div class ="shohin_main">
-			<div class ="syohin"> <span> 商品コード </span> <input type ="text"> </div>
-			<div class ="blue2"> <input type ="submit" value ="新規登録"> </div>
-			<div class ="blue3"> <input type ="submit" value ="中断" class ="tyu_dan"> </div>
-			<div class ="blue_influ"> </div>
-		</div>
-
-		<div class ="kankaku"> <span> 商品名 </span> <input type ="text">	</div>
-		<div class ="kankaku"> <span> 単価 </span> <input type ="text" maxlength ="11"> </div>
-		<div class ="kankaku"> <span> 製造メーカー </span> <input> <input type="submit" value="▼"> </div>
-	</div>
-<!-- 画面2終了 -->
-
-
-<!-- 画面3 -->
-	<div class="gamen3">
-		<div class="blue">検索結果</div>
-
-		<div class="botan1">
-			<input type="button" value="更新" class="button1">
-			<input type="submit" value="削除" class="button2">
-			<input type="submit" value="中断" class="button3">
-		</div>
-
-		<table border ="1">
-			<tr class ="Hyo_color">
-				<th>NO</th>
-				<th>対象</th>
-				<th>商品コード</th>
-				<th>商品名</th>
-				<th>単価</th>
-				<th>製造メーカー</th>
-			</tr>
-
-			<tr>
-				<th>1</th>
-				<th>□</th>
-				<th class ="Hyo_code"><input maxlength="6"></th>
-				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
-				<th><input class ="tanka"></th>
-				<th>xxxxxxxxxxx</th>
-			</tr>
-  
-
-			<tr>
-				<th>2</th>
-				<th>□</th>
-				<th class ="Hyo_code"><input maxlength="6"></th>
-				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
-				<th><input class ="tanka"></th>
-				<th>xxxxxxxxxxx<input type="submit" value="▼"></th>
-			</tr>
-
-			<tr>
-				<th>3</th>
-				<th>□</th>
-				<th class ="Hyo_code"><input maxlength="6"></th>
-				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
-				<th><input class ="tanka"></th>
-				<th>xxxxxxxxxxx<input type="submit" value="▼"></th>
-			</tr>
-
-			<tr>
-				<th>4</th>
-				<th>□</th>
-				<th class ="Hyo_code"><input maxlength="6"></th>
-				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
-				<th><input class ="tanka"></th>
-				<th>xxxxxxxxxxx<input type="submit" value="▼"></th>
-			</tr>
-
-			<tr>
-				<th>5</th>
-				<th>□</th>
-				<th class ="Hyo_code"><input maxlength="6"></th>
-				<th class ="Hyo_name"><input maxlength="50" class ="name_size"></th>
-				<th><input class ="tanka"></th>
-				<th>single select (fselect)<td th:text="*{fselect}"></td></th>
-			</tr>
-		</table>
-	</div>
-<!-- 画面3終了 -->
-<!-- 大画面終了 -->
 </div>
+	<!-- jquery セレクター検索 -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- jquery セレクター検索 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="/CSS/JavaScript.js" th:src="@{/CSS/JavaScript.js}"></script>
+	<script src="/CSS/JavaScript.js" th:src="@{/CSS/JavaScript.js}"></script>
 
 </body>
 </html>
